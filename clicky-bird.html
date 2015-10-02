@@ -3,9 +3,13 @@
 </head>
 
 <body name="body">
-  {{> bird }}
+{{> bird }}
 </body>
 
 <template name="bird">
-  <canvas id="bird-canvas"></canvas>
+  {{#if Template.subscriptionsReady}}
+    <canvas id="bird-canvas"></canvas>
+  {{else}}
+    Loading...
+  {{/if}}
 </template>
