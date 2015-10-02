@@ -94,7 +94,7 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
     Meteor.setInterval(function() {
         moveDown();
-    }, 1000 / 30);
+    }, 500);
 
     Meteor.publish("game", function (gameId) {
 
