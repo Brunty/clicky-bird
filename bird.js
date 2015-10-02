@@ -15,7 +15,7 @@ if (Meteor.isClient) {
   //  }
   //});
 
-  draw = function(position) {
+  draw = function(position, frame, seed) {
     var canvas = $("#bird-canvas");
     var context = document.getElementById('bird-canvas').getContext('2d');
     canvas.attr('width', $(window).width());
