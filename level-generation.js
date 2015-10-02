@@ -2,13 +2,13 @@
 drawLevel = function(context,seed,frame) {
   var canvas = $("#bird-canvas");
   var level = getLevel(1000,seed);
-  var block_width = 40;
-  var block_space_multiplier = 5;
+  var block_width = 30;
+  var block_space_multiplier = 8;
   var block_space = block_width * block_space_multiplier;
   var block_period = block_space + block_width;
 
   var pos_x = 150;
-  var frame_shift = (frame * 5);
+  var frame_shift = (frame * 1);
 
   level.forEach(function(level) {
 
@@ -44,7 +44,7 @@ getLevel = function(height,block_seed) {
 }
 
 var block_pos = function(height,seed,difficulty) {
-  var difficulty_factor = 8;
+  var difficulty_factor = 4;
   var apature = 350;
   var pos = (seed/255)*height;
   var modifier = (apature - (difficulty * difficulty_factor));

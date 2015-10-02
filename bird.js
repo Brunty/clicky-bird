@@ -24,7 +24,7 @@ if (Meteor.isClient) {
     context.fillStyle = "#FFFFFF";
     context.fillRect(0, 0, canvas.width(), canvas.height());
 
-    drawLevel(context,44,0);
+    drawLevel(context,seed,frame);
 
     var bird = new Image();
     bird.src = "/bird.svg";
