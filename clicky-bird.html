@@ -2,13 +2,14 @@
   <title>clicky-bird</title>
 </head>
 
-<body>
-  <h1>Welcome to Meteor!</h1>
+<body name="body">
+  {{> bird }}
+  <h1>Clicky Burdz</h1>
 
-  {{> hello}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
+<template name="bird">
+  <div id="bird-overlay"></div>
+  <div id="bird" style="bottom:{{counter}}px;"></div>
   <p>You've pressed the button {{counter}} times.</p>
 </template>
