@@ -35,8 +35,7 @@ moveDown = function () {
         _id: 'game',
         position: { $gt: 0 }
     }, {
-        $inc: { position: -1 },
-        $inc: { frame: 1 }
+        $inc: { position: -1, frame: 1 }
     });
 };
 
@@ -95,7 +94,7 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
     Meteor.setInterval(function() {
         moveDown();
-    }, 200);
+    }, 1000 / 30);
 
     Meteor.publish("game", function (gameId) {
 
