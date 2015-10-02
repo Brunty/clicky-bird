@@ -1,21 +1,21 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
-
+  //// counter starts at 0
+  //Session.setDefault('counter', 0);
+  //
   Template.bird.helpers({
     counter: function () {
       return Session.get('counter');
     }
   });
+  //
+  //Template.bird.events({
+  //  'click': function () {
+  //    // increment the counter when button is clicked
+  //    Session.set('counter', Session.get('counter') + 2);
+  //  }
+  //});
 
-  Template.bird.events({
-    'click': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 2);
-    }
-  });
-
-  draw = function() {
+  draw = function(position) {
     var canvas = $("#bird-canvas");
     var context = document.getElementById('bird-canvas').getContext('2d');
     canvas.attr('width', $(window).width());
@@ -32,13 +32,19 @@ if (Meteor.isClient) {
     bird.height = 52;
 
     context.fillStyle = 'red';
+<<<<<<< HEAD
     context.drawImage(bird, 20, canvas.height() - bird.height - Session.get('counter'), bird.width, bird.height);
 
   };
+=======
+    context.drawImage(bird, 20, canvas.height() - bird.height - position, bird.width, bird.height);
+>>>>>>> 910f8fe64dba80a3cf8fc321dbdca81d488e1352
 
-  setInterval(function() {
-    Session.set('counter', Session.get('counter') > 0 ? Session.get('counter') - 1 : 0);
+  };
 
+<<<<<<< HEAD
     draw();
   }, 110);
+=======
+>>>>>>> 910f8fe64dba80a3cf8fc321dbdca81d488e1352
 }
