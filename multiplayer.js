@@ -35,7 +35,13 @@ moveDown = function () {
         _id: 'game',
         position: { $gt: 0 }
     }, {
-        $inc: { position: -1, frame: 1 }
+        $inc: { position: -1 }
+    });
+
+    Games.update({
+        _id: 'game'
+    }, {
+        $inc: { frame: 1 }
     });
 };
 
