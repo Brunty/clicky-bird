@@ -8,7 +8,7 @@ drawLevel = function(context,seed,frame) {
   var block_period = block_space + block_width;
 
   var pos_x = 150;
-  var frame_shift = (frame * 1);
+  var frame_shift = (frame * 10);
 
   level.forEach(function(level) {
 
@@ -34,7 +34,7 @@ drawLevel = function(context,seed,frame) {
 
 getLevel = function(height,block_seed) {
   var blocks = [];
-  for (i = 2; i < 254; i++) {
+  for (i = 2; i < 1000; i++) {
     block_seed = md5(block_seed)
     var hex = "0x";
     blocks.push(block_pos(height,parseInt(hex.concat(block_seed.substr(1,2))),i));
@@ -45,9 +45,14 @@ getLevel = function(height,block_seed) {
 
 var block_pos = function(height,seed,difficulty) {
   var difficulty_factor = 4;
-  var apature = 350;
-  var pos = (seed/255)*height;
+  var apature = 400;
+  var pos = ((seed/255)*(height*0.6))+(height*0.2);
   var modifier = (apature - (difficulty * difficulty_factor));
+
+  if(modifier < 100) {
+    var modifier = 100;
+  }
+
   return {
     'x':i,
     // 'y1':Math.random() * 10,
