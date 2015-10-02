@@ -130,7 +130,8 @@ if (Meteor.isServer) {
             Games.insert({
                 _id:      'game',
                 position: 0,
-                players:  1
+                players:  1,
+                seed: Random.id()
             });
         }
     });
