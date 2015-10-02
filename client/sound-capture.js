@@ -50,7 +50,7 @@ navigator.webkitGetUserMedia({ audio: true, video: true }, function (stream) {
             if (average < 0) {
                 average = 0;
             }
-            
+
             canvasContext.fillRect(0, 130 - average, 25, 130);
 
         }
