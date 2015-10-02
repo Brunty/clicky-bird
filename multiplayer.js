@@ -26,8 +26,10 @@ setPlayers = function (gameId, players) {
 };
 moveUp = function () {
     // increment the counter when button is clicked
-    Games.update('game', {
-        $inc: {position: 1.5}
+    Games.update({
+        _id: 'game'
+    }, {
+        $inc: {position: 5}
     });
 };
 moveDown = function () {
@@ -35,13 +37,13 @@ moveDown = function () {
         _id: 'game',
         position: { $gt: 0 }
     }, {
-        $inc: { position: -1 }
+        $inc: { position: -2 }
     });
 
     Games.update({
         _id: 'game'
     }, {
-        $inc: { frame: 1 }
+        $inc: { frame: 10 }
     });
 };
 
@@ -100,7 +102,7 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
     Meteor.setInterval(function() {
         moveDown();
-    }, 500);
+    }, 200);
 
     Meteor.publish("game", function (gameId) {
 
