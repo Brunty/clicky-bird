@@ -27,7 +27,7 @@ setPlayers = function (gameId, players) {
 moveUp = function () {
     // increment the counter when button is clicked
     Games.update('game', {
-        $inc: {position: 1}
+        $inc: {position: 1.5}
     });
 };
 moveDown = function () {
@@ -35,7 +35,13 @@ moveDown = function () {
         _id: 'game',
         position: { $gt: 0 }
     }, {
-        $inc: { position: -1, frame: 1 }
+        $inc: { position: -1 }
+    });
+
+    Games.update({
+        _id: 'game'
+    }, {
+        $inc: { frame: 1 }
     });
 };
 
@@ -94,7 +100,7 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
     Meteor.setInterval(function() {
         moveDown();
-    }, 1000 / 30);
+    }, 500);
 
     Meteor.publish("game", function (gameId) {
 
