@@ -32,6 +32,11 @@ if (Meteor.isClient) {
     bird.height = 52;
 
     context.fillStyle = 'red';
-    context.drawImage(bird, 20, canvas.height() - bird.height - position, bird.width, bird.height);
+
+    console.log(position);
+
+    var maxHeight = (canvas.height() - bird.height);
+
+    context.drawImage(bird, 20, maxHeight - maxHeight * (position / 100), bird.width, bird.height);
   };
 }
