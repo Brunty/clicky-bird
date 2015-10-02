@@ -24,6 +24,8 @@ if (Meteor.isClient) {
     context.fillStyle = "#FFFFFF";
     context.fillRect(0, 0, canvas.width(), canvas.height());
 
+    drawLevel(context,44);
+
     var bird = new Image();
     bird.src = "/bird.svg";
     bird.width = 45;
@@ -31,7 +33,7 @@ if (Meteor.isClient) {
 
     context.fillStyle = 'red';
     context.drawImage(bird, 20, canvas.height() - bird.height - Session.get('counter'), bird.width, bird.height);
-    
+
   };
 
   setInterval(function() {

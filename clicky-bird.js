@@ -12,7 +12,7 @@ if (Meteor.isClient) {
   Template.hello.events({
     'click button': function () {
       // increment the counter when button is clicked
-      Session.set('level', getLevel(new Date().getUTCMilliseconds()));
+      // Session.set('level', getLevel();
     }
   });
 }
