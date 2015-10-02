@@ -27,7 +27,7 @@ setPlayers = function (gameId, players) {
 moveUp = function () {
     // increment the counter when button is clicked
     Games.update('game', {
-        $inc: {position: 1}
+        $inc: {position: 1.5}
     });
 };
 moveDown = function () {
