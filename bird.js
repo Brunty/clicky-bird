@@ -32,19 +32,6 @@ if (Meteor.isClient) {
     bird.height = 52;
 
     context.fillStyle = 'red';
-<<<<<<< HEAD
-    context.drawImage(bird, 20, canvas.height() - bird.height - Session.get('counter'), bird.width, bird.height);
-
-  };
-=======
     context.drawImage(bird, 20, canvas.height() - bird.height - position, bird.width, bird.height);
->>>>>>> 910f8fe64dba80a3cf8fc321dbdca81d488e1352
-
   };
-
-<<<<<<< HEAD
-    draw();
-  }, 110);
-=======
->>>>>>> 910f8fe64dba80a3cf8fc321dbdca81d488e1352
 }
