@@ -4,12 +4,8 @@
 
 <body name="body">
   {{> bird }}
-  <h1>Clicky Burdz</h1>
-
 </body>
 
 <template name="bird">
-  <div id="bird-overlay"></div>
-  <div id="bird" style="bottom:{{counter}}px;"></div>
-  <p>You've pressed the button {{counter}} times.</p>
+  <canvas id="bird-canvas"></canvas>
 </template>
