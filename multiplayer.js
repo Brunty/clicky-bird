@@ -35,7 +35,8 @@ moveDown = function () {
         _id: 'game',
         position: { $gt: 0 }
     }, {
-        $inc: { position: -1 }
+        $inc: { position: -1 },
+        $inc: { frame: 1 }
     });
 };
 
@@ -55,7 +56,7 @@ if (Meteor.isClient) {
                 console.log(game);
 
                 if (document.getElementById('bird-canvas')) {
-                    draw(game.position);
+                    draw(game.position, game.frame, game.seed);
                 }
 
                 if (connectedPlayers != game.players) {
