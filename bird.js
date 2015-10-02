@@ -15,7 +15,28 @@ if (Meteor.isClient) {
     }
   });
 
+  draw = function() {
+    var canvas = $("#bird-canvas");
+    var context = document.getElementById('bird-canvas').getContext('2d');
+    canvas.attr('width', $(window).width());
+    canvas.attr('height', $(window).height());
+
+    context.fillStyle = "#FFFFFF";
+    context.fillRect(0, 0, canvas.width(), canvas.height());
+
+    var bird = new Image();
+    bird.src = "/bird.svg";
+    bird.width = 45;
+    bird.height = 52;
+
+    context.fillStyle = 'red';
+    context.drawImage(bird, 20, canvas.height() - bird.height - Session.get('counter'), bird.width, bird.height);
+    
+  };
+
   setInterval(function() {
     Session.set('counter', Session.get('counter') > 0 ? Session.get('counter') - 1 : 0);
+
+    draw();
   }, 110);
 }
